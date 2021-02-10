@@ -1,3 +1,9 @@
-# FaceDetection
-It is a full-stack app made using **React** and **Express** with **PostgreSQL** Database.
-Make your account to register and enter URL of any image and the machine-learning algorithm will detect a face in the image.
+# SmartBrain - v1
+Final project for ZTM course
+
+1. Clone this repo
+2. Run `npm install`
+3. Run `npm start`
+4. You must add your own API key in the `src/App.js` file to connect to Clarifai.
+
+You can grab Clarifai API key [here](https://www.clarifai.com/)
