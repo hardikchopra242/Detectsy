@@ -34,7 +34,7 @@ class Register extends React.Component {
     })
       .then(response => response.json())
       .then(user => {
-        if (user) {
+        if (user.id) {
           this.props.loadUser(user)
           this.props.onRouteChange('home');
         }
@@ -47,7 +47,7 @@ class Register extends React.Component {
         <main className="pa4 black-80">
           <div className="measure">
             <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-              <legend className="f1 fw6 ph0 mh0">Registerr</legend>
+              <legend className="f1 fw6 ph0 mh0">Registerrr</legend>
               <div className="mt3">
                 <label className="db fw6 lh-copy f6" htmlFor="name">Name</label>
                 <input

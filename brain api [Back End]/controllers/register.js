@@ -1,6 +1,9 @@
 const handleRegister = (req,res,db,bcrypt) =>{
-
-    const {name, email, password} = req.body;   
+    const {name, email, password} = req.body;
+    if(!email || !name ||  !password){
+        return res.status(400).json('incorrect form submission');
+    }
+       
     const hash = bcrypt.hashSync(password);
 
     //transaction is used to check if all the things dont work correctly then error will occur
