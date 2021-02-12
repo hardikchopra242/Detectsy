@@ -24,35 +24,6 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// Because we dont have a database yet, lets make one for us 
-// const database = {
-// 	users: [
-// 		{
-// 			id:'123',
-// 			name:'John',
-// 			email: 'john@gmail.com',
-// 			password:'cookies',
-// 			entries: '0',
-// 			joined: new Date()
-// 		},
-// 		{
-// 			id:'124',
-// 			name:'Sally',
-// 			email: 'sally@gmail.com',
-// 			password:'bananas',
-// 			entries: '0',
-// 			joined: new Date()
-// 		}
-// 	],
-// 	login: [
-// 	{	
-// 		id:'987',
-// 		hash:'',
-// 		email:'john@gmail.com'
-// 	}
-// 	]
-// }
-
 // Main Route ============================================================================================================
 app.get('/', (req,res) => {
 	
@@ -154,19 +125,3 @@ app.listen(3001, () =>{
 
 
 
-/*
-
-// We wrote below two commands just to test how BCRYPT works!!!
-bcrypt.compare("hardik", '$2a$10$KKW6gFXecQzRo.HGjtdyq.flpHUPZGvvK8XEz9uId0Mqa53V/Tgfe', function(err, res) {
-    console.log("Works one",res);
-});
-bcrypt.compare("veggies", '$2a$10$KKW6gFXecQzRo.HGjtdyq.flpHUPZGvvK8XEz9uId0Mqa53V/Tgfe', function(err, res) {
-    console.log("Works two",res);
-});
-
-	if(req.body.email === database.users[0].email && req.body.password === database.users[0].password){    //if password and email matches with one of the users in the database
-		res.json(database.users[0])
-	}else{
-		res.status(400).json('error logging in');
-	}
-*/
