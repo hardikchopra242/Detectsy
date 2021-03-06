@@ -16,3 +16,16 @@
   left: 0;
   z-index: -1;
 }
+
+.input_field{
+  border-color: #030303;
+  border-radius: 4px;
+}
+
+.input_field:focus {
+  outline : none;
+}
+
+.input_field:hover{
+  outline : 1px solid #040404; 
+}
