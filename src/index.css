@@ -6,8 +6,9 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: "Courier New", Courier, monospace;
-  background: linear-gradient(89deg, #FF5EDF 0%, #04C8DE 100%); /* w3c */
+  font-family: Ubuntu, sans-serif;
+  background: linear-gradient(89deg, #0e69b4 0%, #04C8DE 100%); 
+  /* background: linear-gradient(89deg, #0c7489 0%, #119da4 100%);  */
 }
 
 button {
