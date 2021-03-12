@@ -1,3 +1,14 @@
+nav{
+	display:flex;
+	justify-content: space-between;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.name{
+	font-weight: bold; 
+}
+
 .nav_element{
     border: 1px solid #040404;
 }

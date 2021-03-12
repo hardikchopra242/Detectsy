@@ -199,7 +199,7 @@ const particlesOptions = {
         "mode": "repulse"
       },
       "onclick": {
-        "enable": true,
+        "enable": false,
         "mode": "push"
       },
       "resize": true
@@ -320,8 +320,9 @@ class App extends Component {
   }
 
   onRouteChange = (route) => {
-    if (route === 'signout') {
-      this.setState(intialState)
+    if (route === 'signin') {
+      this.setState(intialState);
+      this.setState({route: 'signin'});
     } else if (route === 'home') {
       this.setState({isSignedIn: true})
     }
@@ -335,12 +336,15 @@ class App extends Component {
          <Particles className='particles'
           params={particlesOptions}
         />
-        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
+        <Navigation 
+        name={this.state.user.name}
+        isSignedIn={isSignedIn} 
+        onRouteChange={this.onRouteChange} />
+        
         { route === 'home'
           ? <div>
               {/* <Logo /> */}
               <Rank
-                name={this.state.user.name}
                 entries={this.state.user.entries}
               />
               <ImageLinkForm
