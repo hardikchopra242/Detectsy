@@ -29,3 +29,10 @@
 .input_field:hover{
   outline : 1px solid #040404; 
 }
+
+.sect{
+  display: flex;
+  justify-content: space-between;
+  padding-left: 1em;
+  padding-right: 1em;
+}

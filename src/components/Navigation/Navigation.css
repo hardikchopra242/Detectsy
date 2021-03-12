@@ -12,3 +12,10 @@ nav{
 .nav_element{
     border: 1px solid #040404;
 }
+
+.nav_end{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+

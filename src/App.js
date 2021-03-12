@@ -9,6 +9,7 @@ import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import './App.css';
+import Howto from './components/Howto/Howto';
 
  
 const particlesOptions2 = {
@@ -338,26 +339,40 @@ class App extends Component {
         />
         <Navigation 
         name={this.state.user.name}
+        entries = {this.state.user.entries}
         isSignedIn={isSignedIn} 
         onRouteChange={this.onRouteChange} />
         
         { route === 'home'
-          ? <div>
+          ? 
+          
+          <div className='sect'>
               {/* <Logo /> */}
-              <Rank
+              
+              {/*<Rank
                 entries={this.state.user.entries}
-              />
+              />*/}
+              
+              <div className='center'>
               <ImageLinkForm
                 onInputChange={this.onInputChange}
                 onButtonSubmit={this.onButtonSubmit}
               />
               <FaceRecognition box={box} imageUrl={imageUrl} />
+              </div>
+              
+              <Howto />
+            
             </div>
-          : (
-             route === 'signin'
-             ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-             : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-            )
+          
+          : 
+          
+          (
+            route === 'signin'
+            ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+            : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+          )
+
         }
       </div>
     );
