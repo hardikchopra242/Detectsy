@@ -3,3 +3,18 @@
 	max-width: 30%;
 
 }
+h3{
+	text-decoration: underline;
+	text-transform: uppercase;
+}
+
+ol{
+	text-align:left;
+	letter-spacing: 12%;
+
+}
+
+li{
+	padding-bottom: 1em;
+
+}
