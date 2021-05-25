@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
-// import Clarifai from 'clarifai';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Navigation from './components/Navigation/Navigation';
 import Signin from './components/Signin/Signin';
@@ -12,7 +11,7 @@ import './App.css';
 import Howto from './components/Howto/Howto';
 import vector from './searching.png';
 import {background} from './backgrounds/background';
-
+import Home from './components/Home/Home';
 
 //Intial State Constant
 const intialState = {
@@ -20,7 +19,7 @@ const intialState = {
       imageUrl: '',
       box: {},
       background: background[0],
-      route: 'signin',
+      route: '',
       isSignedIn: false,
       user: {
         id: '',
@@ -30,6 +29,7 @@ const intialState = {
         joined: ''
       }
     }
+
 
 class App extends Component {
   constructor() {
@@ -99,7 +99,7 @@ class App extends Component {
   }
 
   onRouteChange = (route) => {
-    if (route === 'signin') {
+    if (route === '') {
       this.setState(intialState);
       this.setState({route: 'signin'});
     } else if (route === 'home') {
@@ -107,6 +107,21 @@ class App extends Component {
       this.setState({background: background[1]});
     }
     this.setState({route: route});
+  }
+
+   manageHomePage(){
+    let route = this.state.route;
+
+    if(route === 'signin'){
+      return (<Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>)
+    }
+    else if(route === 'register'){
+      return (<Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>)
+    }
+    else{
+      //Sign Out Home
+      return (<Home />)
+    }
   }
 
   render() {
@@ -122,7 +137,9 @@ class App extends Component {
         name={this.state.user.name}
         entries = {this.state.user.entries}
         isSignedIn={isSignedIn} 
-        onRouteChange={this.onRouteChange} />
+        onRouteChange={this.onRouteChange} 
+        route = {route}
+        />
         
         {/*<img src={vector} alt = "vector"  className="vector"></img>*/}
 
@@ -150,14 +167,9 @@ class App extends Component {
             </div>
           
           : 
-          
-          (
-            route === 'signin'
-            ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-            : <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-          )
-
+             this.manageHomePage()
         }
+
       </div>
     );
   }

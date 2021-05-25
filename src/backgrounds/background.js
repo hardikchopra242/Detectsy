@@ -10,7 +10,7 @@ export const background = [
       }
     },
     "color": {
-      "value": "#ffffff"
+      "value": "#000000"
     },
     "shape": {
       "type": "circle",
@@ -50,7 +50,7 @@ export const background = [
     "line_linked": {
       "enable": true,
       "distance": 150,
-      "color": "#ffffff",
+      "color": "#000000",
       "opacity": 0.4,
       "width": 1
     },
@@ -117,7 +117,7 @@ export const background = [
 {
   "particles": {
     "number": {
-      "value": 6,
+      "value": 0,
       "density": {
         "enable": true,
         "value_area": 800
