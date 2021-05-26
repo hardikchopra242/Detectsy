@@ -44,3 +44,10 @@
   left: 0;
   height: 400px;
 }
+
+.image_wrapper{
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  border: 2px solid pink;
+}

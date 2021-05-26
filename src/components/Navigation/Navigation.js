@@ -1,16 +1,5 @@
 import React from 'react';
-import './Navigation.css';
-
-const manage_back_button = (isSignedIn,route) => {
-  if(!isSignedIn){
-    let back = document.querySelector('.back_button');
-    // if(route === ''){
-    //   back.style.display = "none";
-    // }else{
-    //   back.style.display = "block";
-    // }
-  }
-}  
+import './Navigation.css'; 
 
 const Navigation = ({ name, entries, onRouteChange, isSignedIn, route}) => {
 

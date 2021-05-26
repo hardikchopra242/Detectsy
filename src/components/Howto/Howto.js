@@ -12,13 +12,17 @@ const Howto = ( ) => {
 				<li>Press Detect!</li>
 				<p>
 				<ol>
-				<li> Resolve the Back Button Issue</li>
+				<li> Resolve the Back Button Issue -- styling + FirstBoot</li>
 				
-				<li> Add a Clear button along with Detect</li> 
+				<li><del> Add a Clear button along with Detect</del></li> 
 				
 				<li> Alignments!!!</li>
 				
 				<li> Where to put the help section?</li>
+
+				<li> Dont increase the counter if the input is empty </li>
+				<li> Styling Buttons</li>
+
 </ol>
 				</p>
 				</ol>

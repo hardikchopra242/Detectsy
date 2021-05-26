@@ -98,7 +98,39 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  onButtonClear = () =>{
+
+    //remove data from the input
+    this.setState({input : ''});
+    this.setState({imageUrl : ''});
+
+    //remove the data from the state
+    let input = document.querySelector(`.input`);
+    let bounding_box = document.querySelector(`.bounding_box`);
+    input.value = ""
+    // bounding_box.style.display = "none";
+    //remove the picture also
+    //--> this is already been done automatically
+  }
+
+  manage_back_button = (isSignedIn,route) => {
+    console.log(route)
+
+    if(!isSignedIn){
+      let back = document.querySelector('.back_button');
+      if(back == null) return;
+      if(route === ''){
+        back.style.display = "none";
+      }else{
+        back.style.display = "block";
+      }
+    }
+  } 
+
   onRouteChange = (route) => {
+    
+    this.manage_back_button(this.isSignedIn,route);
+
     if (route === '') {
       this.setState(intialState);
       this.setState({route: 'signin'});
@@ -148,18 +180,23 @@ class App extends Component {
           ? 
           
           <div className='sect'>
+              
               {/* <Logo /> */}
               
               {/*<Rank
                 entries={this.state.user.entries}
               />*/}
               
-              <div className='center'>
-              <ImageLinkForm
-                onInputChange={this.onInputChange}
-                onButtonSubmit={this.onButtonSubmit}
-              />
-              <FaceRecognition box={box} imageUrl={imageUrl} />
+              <div className='image_wrapper center'>
+                
+                  <ImageLinkForm
+                    onInputChange={this.onInputChange}
+                    onButtonSubmit={this.onButtonSubmit}
+                    onButtonClear = {this.onButtonClear}
+                  />
+
+                  <FaceRecognition box={box} imageUrl={imageUrl} />
+                  
               </div>
               
               <Howto />

@@ -21,3 +21,6 @@ nav{
 	align-items: center;
 }
 
+.back_button{
+	display: none;
+}
