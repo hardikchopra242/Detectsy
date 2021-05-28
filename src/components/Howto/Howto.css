@@ -1,12 +1,25 @@
 .container{
-	border: 2px solid blue;
-	max-width: 30%;
+
+	/*max-width: 30%;*/
 
 }
-h3{
-	text-decoration: underline;
-	text-transform: uppercase;
+
+.instructions{
+	
+	position:absolute;
+	min-width: 50vw;
+	top: 0vh;
+	right: 15vw;
+	margin: 0 auto;
+	background-color: #030303;
+	background-image: linear-gradient(315deg, #000000 0%, #070707 74%);
+	color:#efefef;
+	border-radius: 1rem;
+	text-align: center;
+	box-shadow: 2px 5px 10px black;
 }
+
+
 
 ol{
 	text-align:left;

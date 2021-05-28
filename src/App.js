@@ -18,7 +18,7 @@ const intialState = {
       input: '',
       imageUrl: '',
       box: {},
-      background: background[0],
+      background: background[1],
       route: '',
       isSignedIn: false,
       user: {
@@ -52,6 +52,7 @@ class App extends Component {
     const image = document.getElementById('inputimage');
     const width = Number(image.width);
     const height = Number(image.height);
+
     return {
       leftCol: clarifaiFace.left_col * width,
       topRow: clarifaiFace.top_row * height,
@@ -94,6 +95,7 @@ class App extends Component {
 
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
+        console.log(this.calculateFaceLocation(response))
       })
       .catch(err => console.log(err));
   }
@@ -136,7 +138,7 @@ class App extends Component {
       this.setState({route: 'signin'});
     } else if (route === 'home') {
       this.setState({isSignedIn: true});
-      this.setState({background: background[1]});
+      this.setState({background: background[0]});
     }
     this.setState({route: route});
   }
@@ -198,8 +200,6 @@ class App extends Component {
                   <FaceRecognition box={box} imageUrl={imageUrl} />
                   
               </div>
-              
-              <Howto />
             
             </div>
           

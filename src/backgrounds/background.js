@@ -3,7 +3,7 @@ export const background = [
  {
   "particles": {
     "number": {
-      "value": 80,
+      "value": 60,
       "density": {
         "enable": true,
         "value_area": 800
@@ -19,7 +19,7 @@ export const background = [
         "color": "#000000"
       },
       "polygon": {
-        "nb_sides": 3
+        "nb_sides": 10
       },
       "image": {
         "src": "img/github.svg",

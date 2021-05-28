@@ -9,18 +9,18 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit, onButtonClear}) => {
       </span>*/}
 
       <div className='center'>
-        <div className='form center pa3 br3 shadow-5'>
-          <input className='input f4 pa2 w-70 center' type='tex' onChange={onInputChange}/>
+        <div className='form center pa2 br2 shadow-5'>
+          <input className='input f5 pa2 w-70 center' type='tex' onChange={onInputChange}/>
           
           <button
-            className='w-20  f4  ph3 pv2'
+            className='btn w-20  f5  ph3 pv2'
             onClick={onButtonClear}
-          >Clear</button>
+          >CLEAR</button>
 
           <button
-            className='w-20  f4  ph3 pv2'
+            className='btn w-20  f5  ph3 pv2 '
             onClick={onButtonSubmit}
-          >Detect</button>
+          >DETECT</button>
         </div>
       </div>
     </div>

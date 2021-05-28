@@ -1,6 +1,6 @@
 import React from 'react';
 import './Navigation.css'; 
-
+import Howto from  '../Howto/Howto'
 const Navigation = ({ name, entries, onRouteChange, isSignedIn, route}) => {
 
     if (isSignedIn) {
@@ -9,8 +9,9 @@ const Navigation = ({ name, entries, onRouteChange, isSignedIn, route}) => {
           <p className='f3 ttc'>Welcome, 
           <span className="name"> {name}</span> !</p>
 
-          <div className='nav_end name'>
-            <span className='pv2 ph3 f4 mh1 br2'>Current Count : {entries} </span>
+          <div className='nav_end '>
+            {/*<span className='pv2 ph3 f4 mh1 br2'>Current Count : {entries} </span>*/}
+            <Howto />
             <p onClick={() => onRouteChange('')} className='nav_element f4 link dim black pv2 ph3 pointer mh1 br2'>Sign Out</p>
           </div>
         </nav>
