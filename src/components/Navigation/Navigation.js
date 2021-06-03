@@ -1,13 +1,15 @@
 import React from 'react';
 import './Navigation.css'; 
 import Howto from  '../Howto/Howto'
+import '../Register/Register.css';
+
 const Navigation = ({ name, entries, onRouteChange, isSignedIn, route}) => {
 
     if (isSignedIn) {
       return (
         <nav>
           <p className='f3 ttc'>Welcome, 
-          <span className="name"> {name}</span> !</p>
+          <span className="name head"> {name}</span> !</p>
 
           <div className='nav_end '>
             {/*<span className='pv2 ph3 f4 mh1 br2'>Current Count : {entries} </span>*/}

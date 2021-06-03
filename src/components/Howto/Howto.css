@@ -7,16 +7,17 @@
 .instructions{
 	
 	position:absolute;
-	min-width: 50vw;
-	top: 0vh;
-	right: 15vw;
+	min-width: 30vw;
+	top:0;
+	right: 0;
 	margin: 0 auto;
 	background-color: #030303;
-	background-image: linear-gradient(315deg, #000000 0%, #070707 74%);
+	background-image: linear-gradient(315deg, #1B1B1C 0%, #1B1B1C 74%);
+	opacity: 0.85;
 	color:#efefef;
-	border-radius: 1rem;
+	border-radius: 0.5em;
 	text-align: center;
-	box-shadow: 2px 5px 10px black;
+	box-shadow: 2px 5px 7px black;
 }
 
 

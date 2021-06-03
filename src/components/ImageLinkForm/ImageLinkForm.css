@@ -1,5 +1,6 @@
 .form {
 width: 50vw;
+min-width: 500px;
 /*background-image: linear-gradient(to right, #f5f7fa, #c3cfe2);*/
 background-color: #f5f7fa;
 background-size: 100px 100px, 100px 100px, 50px 50px, 50px 50px;

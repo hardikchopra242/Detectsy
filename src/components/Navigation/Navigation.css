@@ -1,11 +1,9 @@
 nav{
 	display:flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	padding-left: 1rem;
 	padding-right: 1rem;
 }
-
-
 
 .name{
 	font-weight: bold; 

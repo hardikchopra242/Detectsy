@@ -1,0 +1,9 @@
+.head{
+
+	background: -webkit-linear-gradient(top left, #050505, #3B6BAD);
+	background: -moz-linear-gradient(top left, #050505, #3B6BAD);
+	background: linear-gradient(to bottom right, #050505, #3B6BAD);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+
+}

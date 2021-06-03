@@ -10,7 +10,7 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit, onButtonClear}) => {
 
       <div className='center'>
         <div className='form center pa2 br2 shadow-5'>
-          <input className='input f5 pa2 w-70 center' type='tex' onChange={onInputChange}/>
+          <input placeholder="Paste Image Address Here" className='input f6 pa2 w-70 center' type='tex' onChange={onInputChange}/>
           
           <button
             className='btn w-20  f5  ph3 pv2'

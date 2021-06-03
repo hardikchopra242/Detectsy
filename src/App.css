@@ -51,3 +51,25 @@
   justify-content: space-between;
 
 }
+
+.login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  height: 70vh;
+
+}
+
+.login div{
+  align-self: center;
+
+
+}
+
+.signin_image{
+  align-items: center;
+  margin-left: 1rem;
+  width: 35rem;
+  /*padding-left: 2rem;*/
+}

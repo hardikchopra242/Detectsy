@@ -1,0 +1,46 @@
+.heading{
+  padding: 0;
+  margin: 0;
+  font-size: 3rem;
+  text-transform: uppercase;
+background: -webkit-linear-gradient(top left, #050505, #3B6BAD);
+background: -moz-linear-gradient(top left, #050505, #3B6BAD);
+background: linear-gradient(to bottom right, #050505, #3B6BAD);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.animate__animated.animate__fadeInDownBig {
+  --animate-duration: 0.7s;
+}
+
+.main_section{
+  display : flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.main_section div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 50vh;
+  align-self: center;
+  padding: 4rem;
+
+}
+
+.home_image{
+  height: 200px;
+
+}
+
+.home_para{
+}
+
+.home_text{
+  line-height : 1.5rem;
+
+}

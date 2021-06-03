@@ -9,9 +9,9 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import './App.css';
 import Howto from './components/Howto/Howto';
-import vector from './searching.png';
 import {background} from './backgrounds/background';
 import Home from './components/Home/Home';
+import signin_image from './signin.svg';
 
 //Intial State Constant
 const intialState = {
@@ -116,41 +116,64 @@ class App extends Component {
   }
 
   manage_back_button = (isSignedIn,route) => {
-    console.log(route)
 
     if(!isSignedIn){
       let back = document.querySelector('.back_button');
+      let nav = document.querySelector('nav');
+
       if(back == null) return;
       if(route === ''){
         back.style.display = "none";
+        nav.style.justifyContent = "flex-end";
+        console.log(nav);
       }else{
         back.style.display = "block";
+        nav.style.justifyContent = "space-between";
       }
     }
   } 
 
   onRouteChange = (route) => {
     
-    this.manage_back_button(this.isSignedIn,route);
+    
 
     if (route === '') {
       this.setState(intialState);
-      this.setState({route: 'signin'});
+
     } else if (route === 'home') {
       this.setState({isSignedIn: true});
       this.setState({background: background[0]});
     }
     this.setState({route: route});
+
+    this.manage_back_button(this.isSignedIn,route);
+    console.log("state is ");
+    console.log(this.state.route);
+
   }
 
    manageHomePage(){
     let route = this.state.route;
 
     if(route === 'signin'){
-      return (<Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>)
+      return (
+        <div className = 'login'> 
+              <div className='signin_image'>
+                    <img src = {signin_image} alt = 'signin' />
+              </div>
+              <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+        </div>
+        )
     }
     else if(route === 'register'){
-      return (<Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>)
+      return (
+        <div className = 'login'>
+              <div className = 'signin_image'>
+                    <img src = {signin_image} alt = 'signin' />
+              </div>
+              <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
+        </div>
+      )
     }
     else{
       //Sign Out Home
