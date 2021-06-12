@@ -3,10 +3,10 @@
   background:#1f1f1f;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'Ubuntu';
   src: local('Ubuntu'), url(./fonts/Ubuntu-Regular.ttf) format('truetype');
-}
+} */
 
 body {
   margin: 0;
