@@ -3,9 +3,9 @@
   margin: 0;
   font-size: 3rem;
   text-transform: uppercase;
-background: -webkit-linear-gradient(top left, #050505, #3B6BAD);
-background: -moz-linear-gradient(top left, #050505, #3B6BAD);
-background: linear-gradient(to bottom right, #050505, #3B6BAD);
+  background: -webkit-linear-gradient(top left, #050505, #3B6BAD);
+  background: -moz-linear-gradient(top left, #050505, #3B6BAD);
+  background: linear-gradient(to bottom right, #050505, #3B6BAD);
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
 }
