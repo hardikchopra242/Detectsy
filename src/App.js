@@ -1,35 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-import FaceRecognition from './components/FaceRecognition/FaceRecognition';
+import Home from './components/Home/Home';
 import Navigation from './components/Navigation/Navigation';
+import FaceRecognition from './components/FaceRecognition/FaceRecognition';
+import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
-import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
-import Howto from './components/Howto/Howto';
-import Home from './components/Home/Home';
 
 import './App.css';
-import signin_image from './signin.svg';
+import signin_image from './images/signin.svg';
 
-//Intial State Constant
 const intialState = {
-      input: '',
-      imageUrl: '',
-      box: {},
+  input: '',
+  imageUrl: '',
+  box: {},
+  route: '',
+  isSignedIn: false,
+  user: {
+    id: '',
+    name: '',
+    email: '',
+    entries: 0,
+    joined: ''
+  }
+}
 
-      route: '',
-      isSignedIn: false,
-      user: {
-        id: '',
-        name: '',
-        email: '',
-        entries: 0,
-        joined: ''
-      }
-    }
+class App extends React.Component {
 
-
-class App extends Component {
   constructor() {
     super();
     this.state = intialState;
@@ -93,37 +90,26 @@ class App extends Component {
 
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
-        console.log(this.calculateFaceLocation(response))
       })
       .catch(err => console.log(err));
   }
 
   onButtonClear = () =>{
-
-    //remove data from the input
     this.setState({input : ''});
     this.setState({imageUrl : ''});
-
-    //remove the data from the state
     let input = document.querySelector(`.input`);
     let bounding_box = document.querySelector(`.bounding_box`);
     input.value = ""
-    // bounding_box.style.display = "none";
-    //remove the picture also
-    //--> this is already been done automatically
   }
 
   manage_back_button = (isSignedIn,route) => {
-
     if(!isSignedIn){
       let back = document.querySelector('.back_button');
       let nav = document.querySelector('nav');
-
       if(back == null) return;
       if(route === ''){
         back.style.display = "none";
         nav.style.justifyContent = "flex-end";
-        console.log(nav);
       }else{
         back.style.display = "block";
         nav.style.justifyContent = "space-between";
@@ -132,27 +118,17 @@ class App extends Component {
   }
 
   onRouteChange = (route) => {
-
-
-
     if (route === '') {
       this.setState(intialState);
-
     } else if (route === 'home') {
       this.setState({isSignedIn: true});
-
     }
     this.setState({route: route});
-
     this.manage_back_button(this.isSignedIn,route);
-    console.log("state is ");
-    console.log(this.state.route);
-
   }
 
    manageHomePage(){
     let route = this.state.route;
-
     if(route === 'signin'){
       return (
         <div className = 'login'>
@@ -174,7 +150,6 @@ class App extends Component {
       )
     }
     else{
-      //Sign Out Home
       return (<Home />)
     }
   }
@@ -182,32 +157,30 @@ class App extends Component {
   render() {
     const { isSignedIn, imageUrl, route, box } = this.state;
     return (
-
         <div className="App">
+          <Navigation
+          name={this.state.user.name}
+          entries = {this.state.user.entries}
+          isSignedIn={isSignedIn}
+          onRouteChange={this.onRouteChange}
+          route = {route}
+          />
 
-        <Navigation
-        name={this.state.user.name}
-        entries = {this.state.user.entries}
-        isSignedIn={isSignedIn}
-        onRouteChange={this.onRouteChange}
-        route = {route}
-        />
-
-        { route === 'home'
-          ?
-          <div className='sect'>
-              <div className='image_wrapper center'>
-                  <ImageLinkForm
-                    onInputChange={this.onInputChange}
-                    onButtonSubmit={this.onButtonSubmit}
-                    onButtonClear = {this.onButtonClear}
-                  />
-                  <FaceRecognition box={box} imageUrl={imageUrl} />
+          { route === 'home'
+            ?
+            <div className='sect'>
+                <div className='image_wrapper center'>
+                    <ImageLinkForm
+                      onInputChange={this.onInputChange}
+                      onButtonSubmit={this.onButtonSubmit}
+                      onButtonClear = {this.onButtonClear}
+                    />
+                    <FaceRecognition box={box} imageUrl={imageUrl} />
+                </div>
               </div>
-            </div>
-          :
-          this.manageHomePage()
-        }
+            :
+            this.manageHomePage()
+          }
       </div>
     );
   }

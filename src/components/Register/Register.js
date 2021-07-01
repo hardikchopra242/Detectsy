@@ -1,6 +1,8 @@
-import React from 'react';
-import '../../../src/App.css';
+import React from 'react'
+
+import '../../../src/App.css'
 import './Register.css'
+
 class Register extends React.Component {
   constructor(props) {
     super(props);
