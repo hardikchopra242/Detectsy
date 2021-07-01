@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Particles from 'react-particles-js';
+
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Navigation from './components/Navigation/Navigation';
 import Signin from './components/Signin/Signin';
@@ -9,7 +9,7 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import './App.css';
 import Howto from './components/Howto/Howto';
-import {background} from './backgrounds/background';
+
 import Home from './components/Home/Home';
 import signin_image from './signin.svg';
 
@@ -18,7 +18,7 @@ const intialState = {
       input: '',
       imageUrl: '',
       box: {},
-      background: background[1],
+
       route: '',
       isSignedIn: false,
       user: {
@@ -131,18 +131,18 @@ class App extends Component {
         nav.style.justifyContent = "space-between";
       }
     }
-  } 
+  }
 
   onRouteChange = (route) => {
-    
-    
+
+
 
     if (route === '') {
       this.setState(intialState);
 
     } else if (route === 'home') {
       this.setState({isSignedIn: true});
-      this.setState({background: background[0]});
+
     }
     this.setState({route: route});
 
@@ -157,7 +157,7 @@ class App extends Component {
 
     if(route === 'signin'){
       return (
-        <div className = 'login'> 
+        <div className = 'login'>
               <div className='signin_image'>
                     <img src = {signin_image} alt = 'signin' />
               </div>
@@ -182,38 +182,36 @@ class App extends Component {
   }
 
   render() {
-    const { isSignedIn, imageUrl, route, box, background } = this.state;
+    const { isSignedIn, imageUrl, route, box } = this.state;
     return (
-        
-        <div className="App">
-         <Particles className='particles'
-          params = {background}
-        />
 
-        <Navigation 
+        <div className="App">
+
+
+        <Navigation
         name={this.state.user.name}
         entries = {this.state.user.entries}
-        isSignedIn={isSignedIn} 
-        onRouteChange={this.onRouteChange} 
+        isSignedIn={isSignedIn}
+        onRouteChange={this.onRouteChange}
         route = {route}
         />
-        
+
         {/*<img src={vector} alt = "vector"  className="vector"></img>*/}
 
         { route === 'home'
-          
-          ? 
-          
+
+          ?
+
           <div className='sect'>
-              
+
               {/* <Logo /> */}
-              
+
               {/*<Rank
                 entries={this.state.user.entries}
               />*/}
-              
+
               <div className='image_wrapper center'>
-                
+
                   <ImageLinkForm
                     onInputChange={this.onInputChange}
                     onButtonSubmit={this.onButtonSubmit}
@@ -221,12 +219,12 @@ class App extends Component {
                   />
 
                   <FaceRecognition box={box} imageUrl={imageUrl} />
-                  
+
               </div>
-            
+
             </div>
-          
-          : 
+
+          :
              this.manageHomePage()
         }
 
