@@ -4,13 +4,11 @@ import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Navigation from './components/Navigation/Navigation';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
-import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
-import Rank from './components/Rank/Rank';
-import './App.css';
 import Howto from './components/Howto/Howto';
-
 import Home from './components/Home/Home';
+
+import './App.css';
 import signin_image from './signin.svg';
 
 //Intial State Constant
@@ -187,7 +185,6 @@ class App extends Component {
 
         <div className="App">
 
-
         <Navigation
         name={this.state.user.name}
         entries = {this.state.user.entries}
@@ -196,38 +193,21 @@ class App extends Component {
         route = {route}
         />
 
-        {/*<img src={vector} alt = "vector"  className="vector"></img>*/}
-
         { route === 'home'
-
           ?
-
           <div className='sect'>
-
-              {/* <Logo /> */}
-
-              {/*<Rank
-                entries={this.state.user.entries}
-              />*/}
-
               <div className='image_wrapper center'>
-
                   <ImageLinkForm
                     onInputChange={this.onInputChange}
                     onButtonSubmit={this.onButtonSubmit}
                     onButtonClear = {this.onButtonClear}
                   />
-
                   <FaceRecognition box={box} imageUrl={imageUrl} />
-
               </div>
-
             </div>
-
           :
-             this.manageHomePage()
+          this.manageHomePage()
         }
-
       </div>
     );
   }
