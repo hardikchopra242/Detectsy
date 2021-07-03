@@ -10,14 +10,16 @@ const ImageLinkForm = ({ onInputChange, onButtonSubmit, onButtonClear}) => {
             type='text'
             onChange={onInputChange}
           />
-          <S.Button
-            onClick={onButtonClear}>
-            CLEAR
-          </S.Button>
-          <S.Button
-            onClick={onButtonSubmit}>
-            DETECT
-          </S.Button>
+          <S.ButtonContainer>
+            <S.Button
+              onClick={onButtonClear}>
+              CLEAR
+            </S.Button>
+            <S.Button
+              onClick={onButtonSubmit}>
+              DETECT
+            </S.Button>
+          </S.ButtonContainer>
         </S.Form>
     </S.Container>
   );

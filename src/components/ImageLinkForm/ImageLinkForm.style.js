@@ -1,6 +1,9 @@
 import {styled} from './../../styles/theme.config.js'
 
 export const Container = styled('div' , {
+  '@media only screen and (max-width : 600px)' : {
+    marginTop : '2em',
+  }
 })
 
 export const Form = styled('div' , {
@@ -27,7 +30,17 @@ export const Input = styled('input' , {
   '&:focus' : {
     border : 'none',
     outline : 'none'
+  },
+
+  '@media only screen and (max-width : 600px)' : {
+    width : '100%',
   }
+})
+
+export const ButtonContainer = styled('div' , {
+  display : 'flex',
+  justifyContent : 'center',
+  alignItems : 'center',
 })
 
 export const Button = styled('button' , {
