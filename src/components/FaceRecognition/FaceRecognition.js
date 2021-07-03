@@ -1,12 +1,21 @@
-import './FaceRecognition.css';
+import * as S from './FaceRecognition.style.js'
 
 const FaceRecognition = ({ imageUrl, box }) => {
   return (
-      <div className='inner relative mt2'>
-        <img id='inputimage' alt='' src={imageUrl} width='500px' heigh='auto'/>
-        <div className='bounding-box' style={{top: box.topRow, right: box.rightCol, bottom: box.bottomRow, left: box.leftCol}}></div>
-      </div>
-  )
+        <S.Container>
+          <S.Content>
+            <img id='inputimage' alt='' src={imageUrl} width='500px' height='auto'/>
+            <S.BoundingBox
+              style={{
+                top: box.topRow,
+                right: box.rightCol,
+                bottom: box.bottomRow,
+                left: box.leftCol
+              }}>
+           </S.BoundingBox>
+          </S.Content>
+        </S.Container>
+    )
 }
 
 export default FaceRecognition;

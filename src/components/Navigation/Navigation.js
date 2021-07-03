@@ -1,32 +1,30 @@
 import Howto from  '../Howto/Howto'
+import * as S from  './Navigation.style.js'
 
-import './Navigation.css';
-import '../Register/Register.css';
+const Navigation = ({ name, onRouteChange, isSignedIn}) => {
 
-const Navigation = ({ name, entries, onRouteChange, isSignedIn, route}) => {
-    if (isSignedIn) {
-      return (
-        <nav>
-          <p className='f3 ttc'>Welcome,
-          <span className="name head"> {name}</span> !</p>
-          <div className='nav_end '>
-            <Howto />
-            <p onClick={() => onRouteChange('')} className='nav_element f4 link dim black pv2 ph3 pointer mh1 br2'>Sign Out</p>
-          </div>
-        </nav>
-      );
-    }
-    else {
-      return (
-        <nav>
-          <h1 onClick={() => onRouteChange('')} className='back_button f4 link dim black pv2 ph3 pointer mh1 br2'>HC</h1>
-          <div className='flex'>
-            <p onClick={() => onRouteChange('signin')} className='nav_element f4 link dim black pv2 ph3 pointer mh1 br2'>Sign In</p>
-            <p onClick={() => onRouteChange('register')} className='nav_element f4 link dim black pv2 ph3 pointer mh1 br2'>Register</p>
-          </div>
-        </nav>
-      );
-    }
+  const SignIn =
+                  <S.Container>
+                    <h1>
+                      Welcome,
+                      <S.Name className="head"> {name}</S.Name> !
+                    </h1>
+                    <S.ButtonContainer>
+                      <Howto />
+                      <S.Button onClick={() => onRouteChange('')}> SIGN OUT </S.Button>
+                    </S.ButtonContainer>
+                  </S.Container>
+
+  const SignOut =
+                  <S.Container>
+                    <h1 onClick={() => onRouteChange('')} >HC</h1>
+                    <S.ButtonContainer >
+                      <S.Button onClick={() => onRouteChange('register')} >REGISTER</S.Button>
+                      <S.Button onClick={() => onRouteChange('signin')} >SIGN IN</S.Button>
+                    </S.ButtonContainer>
+                  </S.Container>
+
+    return isSignedIn ? SignIn : SignOut
 }
 
 export default Navigation;

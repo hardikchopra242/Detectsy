@@ -10,6 +10,9 @@ import Register from './components/Register/Register';
 import './App.css';
 import signin_image from './images/signin.svg';
 
+import globalStyle from './styles/global.style.js'
+import {Layout} from './styles/theme.config.js'
+
 const intialState = {
   input: '',
   imageUrl: '',
@@ -102,20 +105,7 @@ class App extends React.Component {
     input.value = ""
   }
 
-  manage_back_button = (isSignedIn,route) => {
-    if(!isSignedIn){
-      let back = document.querySelector('.back_button');
-      let nav = document.querySelector('nav');
-      if(back == null) return;
-      if(route === ''){
-        back.style.display = "none";
-        nav.style.justifyContent = "flex-end";
-      }else{
-        back.style.display = "block";
-        nav.style.justifyContent = "space-between";
-      }
-    }
-  }
+
 
   onRouteChange = (route) => {
     if (route === '') {
@@ -124,7 +114,7 @@ class App extends React.Component {
       this.setState({isSignedIn: true});
     }
     this.setState({route: route});
-    this.manage_back_button(this.isSignedIn,route);
+
   }
 
    manageHomePage(){
@@ -155,15 +145,17 @@ class App extends React.Component {
   }
 
   render() {
+
+    globalStyle();
+
     const { isSignedIn, imageUrl, route, box } = this.state;
     return (
+      <Layout>
         <div className="App">
           <Navigation
           name={this.state.user.name}
-          entries = {this.state.user.entries}
           isSignedIn={isSignedIn}
           onRouteChange={this.onRouteChange}
-          route = {route}
           />
 
           { route === 'home'
@@ -182,6 +174,7 @@ class App extends React.Component {
             this.manageHomePage()
           }
       </div>
+      </Layout>
     );
   }
 }

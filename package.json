@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@stitches/react": "^0.2.2",
     "animate.css": "^4.1.1",
     "clarifai": "^2.9.1",
     "react": "^17.0.1",
