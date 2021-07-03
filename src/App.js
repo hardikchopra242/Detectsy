@@ -6,6 +6,7 @@ import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
+import Footer from './components/Footer/Footer'
 
 import './App.css';
 import signin_image from './images/signin.svg';
@@ -174,6 +175,7 @@ class App extends React.Component {
             this.manageHomePage()
           }
       </div>
+      <Footer />
       </Layout>
     );
   }

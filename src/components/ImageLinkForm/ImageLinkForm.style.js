@@ -1,6 +1,7 @@
 import {styled} from './../../styles/theme.config.js'
 
 export const Container = styled('div' , {
+  height : '70vh',
   '@media only screen and (max-width : 600px)' : {
     marginTop : '2em',
   }
