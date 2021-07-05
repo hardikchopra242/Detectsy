@@ -59,7 +59,13 @@ const globalStyle = global({
   	background: 'linear-gradient(to bottom right, #050505, #3B6BAD)',
   	'-webkit-text-fill-color' : 'transparent',
   	'-webkit-background-clip' : 'text',
-  }
+  },
+
+  '.flexColumn' : {
+    '@media only screen and (max-width : 600px)' : {
+      flexDirection : 'column',
+    }
+  },
 
 })
 

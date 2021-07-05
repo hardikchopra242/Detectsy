@@ -4,7 +4,13 @@ const FaceRecognition = ({ imageUrl, box }) => {
   return (
         <S.Container>
           <S.Content>
-            <img id='inputimage' alt='' src={imageUrl} width='500px' height='auto'/>
+            <img
+              id='inputimage'
+              src={imageUrl}
+              width='500px'
+              height='auto'
+              style = {{borderRadius : '3px'}}
+              />
             <S.BoundingBox
               style={{
                 top: box.topRow,

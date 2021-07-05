@@ -4,7 +4,7 @@ import * as S from  './Navigation.style.js'
 const Navigation = ({ name, onRouteChange, isSignedIn}) => {
 
   const SignIn =
-                  <S.Container>
+                  <S.Container className='flexColumn'>
                     <h1 className = 'animate__animated animate__fadeInDownBig'>
                       Welcome,
                       <S.Name className="head"> {name}</S.Name> !

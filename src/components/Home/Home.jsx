@@ -14,7 +14,7 @@ const Home = () => {
 						</S.SVG>
 						<S.Para className = 'animate__animated animate__fadeInRight'>
 								Welcome To Detectsy! <br />
-								This is a full-stack webApp made using ReactJS & ExpressJS <br /><br />
+								Detectsy is a web-app that helps you detect faces in images.<br /><br />
 								This website can help you detect faces in images
 								Welcome To Detectsy! <br />
 								This is a full-stack webApp made using ReactJS & ExpressJS <br /><br />

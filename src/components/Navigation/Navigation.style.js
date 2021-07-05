@@ -6,7 +6,6 @@ export const Container = styled('nav' , {
   justifyContent : 'space-between',
   margin : '0 1em',
   '@media only screen and (max-width : 600px)' : {
-    flexDirection : 'column',
   }
 })
 
