@@ -14,6 +14,7 @@ export const Content = styled('div' , {
   justifyContent : 'center',
   alignItems : 'center',
   flexDirection : 'column',
+  margin : '5vh',
   '@media only screen and (max-width : 600px)' : {
     width : '80vw',
   }
