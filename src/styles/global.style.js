@@ -1,4 +1,5 @@
 import { global, lightTheme } from './theme.config.js'
+import background from './../images/animated.svg'
 
 const globalStyle = global({
 
@@ -14,8 +15,8 @@ const globalStyle = global({
   },
 
   body : {
-    backgroundColor : '#130f40',
-    backgroundImage : 'linear-gradient(to left, #f5f7fa, #c3cfe2)',
+    backgroundColor : '#c3cfe2',
+    backgroundImage : `url(${background})`,
   },
 
   '::selection' : {
