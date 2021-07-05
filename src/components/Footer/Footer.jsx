@@ -7,13 +7,12 @@ const Footer = () => {
     <S.Container>
       <S.Content>
         <S.Text>
-          Made with  <Icons.Heart />   +    <Icons.Coffee /> +
+          Made with  <Icons.Heart />   +   <Icons.Coffee /> +
           <S.Link href="https://reactjs.org/" target="_blank">
             ReactJS
           </S.Link>
         </S.Text>
       </S.Content>
-
       <S.Content>
         <S.Text>
           © 2021 &nbsp; Hardik Chopra

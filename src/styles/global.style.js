@@ -27,7 +27,7 @@ const globalStyle = global({
     userSelect : 'none',
     fontSize : '$5',
     '@media only screen and (max-width : 600px)' : {
-      fontSize : '$4 !important',
+      fontSize : '$5 !important',
     }
   },
 

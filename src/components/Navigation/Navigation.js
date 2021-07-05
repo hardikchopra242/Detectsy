@@ -17,7 +17,10 @@ const Navigation = ({ name, onRouteChange, isSignedIn}) => {
 
   const SignOut =
                   <S.Container>
-                    <h1 onClick={() => onRouteChange('')} >HC</h1>
+                    <h1
+                      onClick={() => onRouteChange('')} >
+                      HC
+                    </h1>
                     <S.ButtonContainer >
                       <S.Button onClick={() => onRouteChange('register')} >REGISTER</S.Button>
                       <S.Button onClick={() => onRouteChange('signin')} >SIGN IN</S.Button>

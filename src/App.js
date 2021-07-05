@@ -123,8 +123,8 @@ class App extends React.Component {
     if(route === 'signin'){
       return (
         <div className = 'login'>
-              <div className='signin_image'>
-                    <img src = {signin_image} alt = 'signin' />
+              <div className='signin_image' className='hideMedium'>
+                    <img src = {signin_image} alt = 'signin'/>
               </div>
               <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
         </div>
@@ -133,8 +133,8 @@ class App extends React.Component {
     else if(route === 'register'){
       return (
         <div className = 'login'>
-              <div className = 'signin_image'>
-                    <img src = {signin_image} alt = 'signin' />
+              <div className = 'signin_image' className='hideMedium'>
+                    <img src = {signin_image} alt = 'signin'  />
               </div>
               <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
         </div>
@@ -152,30 +152,29 @@ class App extends React.Component {
     const { isSignedIn, imageUrl, route, box } = this.state;
     return (
       <Layout>
-        <div className="App">
-          <Navigation
+        <Navigation
           name={this.state.user.name}
           isSignedIn={isSignedIn}
           onRouteChange={this.onRouteChange}
-          />
+        />
 
-          { route === 'home'
-            ?
-            <div className='sect'>
-                <div className='image_wrapper center'>
-                    <ImageLinkForm
-                      onInputChange={this.onInputChange}
-                      onButtonSubmit={this.onButtonSubmit}
-                      onButtonClear = {this.onButtonClear}
-                    />
-                    <FaceRecognition box={box} imageUrl={imageUrl} />
-                </div>
+        { route === 'home'
+          ?
+          <div className='sect'>
+              <div className='image_wrapper'>
+                  <ImageLinkForm
+                    onInputChange={this.onInputChange}
+                    onButtonSubmit={this.onButtonSubmit}
+                    onButtonClear = {this.onButtonClear}
+                  />
+                  <FaceRecognition box={box} imageUrl={imageUrl} />
               </div>
-            :
-            this.manageHomePage()
-          }
-      </div>
-      <Footer />
+            </div>
+          :
+          this.manageHomePage()
+        }
+
+        <Footer />
       </Layout>
     );
   }

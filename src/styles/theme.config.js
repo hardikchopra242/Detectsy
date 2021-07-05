@@ -18,12 +18,13 @@ export const { styled, css, global, getCssString } = createCss({
       },
 
       fontSizes: {
-        1: '12px',
+        1: '14px',
         2: '18px',
         3: '20px',
         4: '24px',
         5: '36px',
-        6: '54px',
+        6: '44px',
+        7: '56px',
       },
     }
 })
