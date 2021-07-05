@@ -5,13 +5,17 @@ const Navigation = ({ name, onRouteChange, isSignedIn}) => {
 
   const SignIn =
                   <S.Container>
-                    <h1>
+                    <h1 className = 'animate__animated animate__fadeInDownBig'>
                       Welcome,
                       <S.Name className="head"> {name}</S.Name> !
                     </h1>
                     <S.ButtonContainer>
                       <Howto />
-                      <S.Button onClick={() => onRouteChange('')}> SIGN OUT </S.Button>
+                      <S.Button
+                        className = 'animate__animated animate__fadeInDownBig'
+                        onClick={() => onRouteChange('')}>
+                        SIGN OUT
+                      </S.Button>
                     </S.ButtonContainer>
                   </S.Container>
 

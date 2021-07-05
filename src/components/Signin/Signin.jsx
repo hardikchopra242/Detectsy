@@ -39,7 +39,7 @@ class Signin extends React.Component {
   render() {
     const { onRouteChange } = this.props;
     return (
-      <S.Container>
+      <S.Container className = 'animate__animated animate__fadeInRight'>
           <S.Fieldset id="sign_up">
             <S.Header className="head">
               Sign In

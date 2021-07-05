@@ -44,7 +44,7 @@ class Register extends React.Component {
 
   render() {
     return (
-      <S.Container>
+      <S.Container className = 'animate__animated animate__fadeInRight'>
             <S.Fieldset id="sign_up">
               <S.Header className="head">
                 Register

@@ -5,12 +5,12 @@ const Howto = ( ) => {
 	return(
 			<Popup
 				trigger = {
-					<S.Button >
+					<S.Button className = 'animate__animated animate__fadeInDownBig' >
 						HELP
 					</S.Button>
 				}
 				position="bottom center">
-				<S.Container>
+				<S.Container className = 'animate__animated animate__backInDown'>
 						<S.Header>Getting Started</S.Header>
 						<S.ListContainer>
 							<S.ListElement>Search any image and copy the image address.</S.ListElement>

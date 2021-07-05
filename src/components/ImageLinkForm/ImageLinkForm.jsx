@@ -2,7 +2,7 @@ import * as S from './ImageLinkForm.style.js'
 
 const ImageLinkForm = ({ onInputChange, onButtonSubmit, onButtonClear}) => {
   return (
-    <S.Container>
+    <S.Container className = 'animate__animated animate__flipInX'>
         <S.Form>
           <S.Input
             className = 'input'
