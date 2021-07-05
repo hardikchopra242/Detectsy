@@ -12,7 +12,7 @@ const Home = () => {
 						<S.SVG className = 'hideSmall'>
 							<img src = {home_image} height={200}  className = 'hideSmall' alt = 'search'/>
 						</S.SVG>
-						<S.Para className = 'home_text animate__animated animate__fadeInRight'>
+						<S.Para className = 'animate__animated animate__fadeInRight'>
 								Welcome To Detectsy! <br />
 								This is a full-stack webApp made using ReactJS & ExpressJS <br /><br />
 								This website can help you detect faces in images

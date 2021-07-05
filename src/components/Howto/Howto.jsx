@@ -10,7 +10,7 @@ const Howto = ( ) => {
 					</S.Button>
 				}
 				position="bottom center">
-				<S.Container className = 'instructions'>
+				<S.Container>
 						<S.Header>Getting Started</S.Header>
 						<S.ListContainer>
 							<S.ListElement>Search any image and copy the image address.</S.ListElement>

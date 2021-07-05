@@ -1,15 +1,9 @@
-import React from 'react';
+import React from 'react'
 
-import Home from './components/Home/Home';
-import Navigation from './components/Navigation/Navigation';
-import FaceRecognition from './components/FaceRecognition/FaceRecognition';
-import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
-import Signin from './components/Signin/Signin';
-import Register from './components/Register/Register';
-import Footer from './components/Footer/Footer'
-
-import './App.css';
-import signin_image from './images/signin.svg';
+import Navigation from './components/Navigation/Navigation.jsx'
+import ImageSearchPage from './components/ImageSearchPage/ImageSearchPage.jsx'
+import MainSection from './components/MainSection/MainSection.jsx'
+import Footer from './components/Footer/Footer.jsx'
 
 import globalStyle from './styles/global.style.js'
 import {Layout} from './styles/theme.config.js'
@@ -118,33 +112,6 @@ class App extends React.Component {
 
   }
 
-   manageHomePage(){
-    let route = this.state.route;
-    if(route === 'signin'){
-      return (
-        <div className = 'login'>
-              <div className='signin_image' className='hideMedium'>
-                    <img src = {signin_image} alt = 'signin'/>
-              </div>
-              <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-        </div>
-        )
-    }
-    else if(route === 'register'){
-      return (
-        <div className = 'login'>
-              <div className = 'signin_image' className='hideMedium'>
-                    <img src = {signin_image} alt = 'signin'  />
-              </div>
-              <Register loadUser={this.loadUser} onRouteChange={this.onRouteChange}/>
-        </div>
-      )
-    }
-    else{
-      return (<Home />)
-    }
-  }
-
   render() {
 
     globalStyle();
@@ -157,21 +124,21 @@ class App extends React.Component {
           isSignedIn={isSignedIn}
           onRouteChange={this.onRouteChange}
         />
-
         { route === 'home'
           ?
-          <div className='sect'>
-              <div className='image_wrapper'>
-                  <ImageLinkForm
-                    onInputChange={this.onInputChange}
-                    onButtonSubmit={this.onButtonSubmit}
-                    onButtonClear = {this.onButtonClear}
-                  />
-                  <FaceRecognition box={box} imageUrl={imageUrl} />
-              </div>
-            </div>
+            <ImageSearchPage
+            onInputChange={this.onInputChange}
+            onButtonSubmit={this.onButtonSubmit}
+            onButtonClear = {this.onButtonClear}
+            box={box}
+            imageUrl={imageUrl}
+            />
           :
-          this.manageHomePage()
+          <MainSection
+            route = {this.state.route}
+            loadUser = {this.loadUser}
+            onRouteChange = {this.onRouteChange}
+          />
         }
 
         <Footer />

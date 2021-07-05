@@ -13,6 +13,11 @@ const globalStyle = global({
     overflowX : 'hidden',
   },
 
+  body : {
+    backgroundColor : '#130f40',
+    backgroundImage : 'linear-gradient(to left, #f5f7fa, #c3cfe2)',
+  },
+
   '::selection' : {
 
   },
