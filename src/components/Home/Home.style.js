@@ -33,15 +33,15 @@ export const Main = styled('div', {
 })
 
 export const SVG = styled('div' , {
-
   width : '30vw',
   margin : '5vh',
-
-  '@media only screen and (max-width ; 600px)' : {
-
-  }
 })
 
 export const Para = styled('p' , {
   fontFamily : '$secondary',
+})
+
+export const Link = styled('a' , {
+  textDecoration : 'underline',
+  color : '$secondary'
 })
