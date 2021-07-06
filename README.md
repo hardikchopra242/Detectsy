@@ -1,3 +1,4 @@
+
 ![image](https://github.com/hardikchopra242/Detectsy/blob/main/src/images/sample.png?raw=true)
 
 <p align="center">
@@ -19,8 +20,10 @@
 # Clone the repo
 git clone https://github.com/hardikchopra242/Detectsy.git
 cd Detectsy
+
 # Install dependencies
 npm install
+
 # Start development server
 npm start
 ```
@@ -31,8 +34,10 @@ npm start
 # Clone the repo
 git clone https://github.com/hardikchopra242/Detectsy.git
 cd Detectsy
+
 # Install dependencies
 npm install
+
 # Build
 npm build
 ```
